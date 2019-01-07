@@ -1,21 +1,23 @@
 import React from 'react';
-import faker from 'faker';
+// import faker from 'faker';
  
-const CommentDetail = () => {
+// PASSING PROPS
+const CommentDetail = (props) => {
+    console.log(props)
     return (
     <div className="comment">
         <a href="/" className="avatar">
-            <img src={faker.image.avatar()} alt="avatar"/>
+            <img src={props.img} alt="avatar"/>
         </a>
         <div className="content">
             <a href="/" className="author">
-                {faker.name.firstName()}
+                {props.author}
             </a>
             <div className="metadata">
-                <span className="date">Today at 5:00PM</span>
+                <span className="date">{props.timeAgo}</span>
             </div>
             <div className="text">
-                {faker.random.words(5)}
+                {props.comment}
             </div>
         </div>
     </div>
